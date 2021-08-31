@@ -1,5 +1,6 @@
-#Authors: Sebastiaan J. van de Velde, Alison T. Cribb
+#Authors: Alison Cribb, Sebastiaan van de Velde
 #Plots oxygen consumption profiles, produced data for Supplementary Material 6
+#Use with Model_Function.R from Model directory 
 
 #====== PACKAGES ========#
 require(ReacTran)
