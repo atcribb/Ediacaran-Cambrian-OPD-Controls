@@ -1,5 +1,5 @@
 #Model function simulating carbon, oxygen, nitrogen, and sulfur reactions
-#Authors: Sebastiaan van de Velde, Alison Cribb
+#Authors: Alison Cribb, Sebastiaan van de Velde
 #Use biogeochemical model function from Model_Function.R script 
 #Code to recreate Figure 4 - low end member (O2 = 0.014 mM)
 
