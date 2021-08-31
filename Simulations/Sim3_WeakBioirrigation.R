@@ -1,4 +1,4 @@
-#Authors: Sebastiaan J. van de Velde, Alison T. Cribb
+#Authors: Alison Cribb, Sebastiaan van de Velde
 #Simulation: Weak Bioirrigaition
 #Use biogeochemical model function from Model_Function.R script 
 
