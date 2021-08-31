@@ -22,7 +22,7 @@ library(metR)
 # load('Sim7_StrongBioturbation.RData')
 
 #====SET UP PLOTTING OUTPUT====#
-#make sure we're plotting only what we need
+#take subset of data to plot Corg=100-200 [umol cm-2 yr-1] and O2.ow=0.014-0.14 mM
 results.df$Corg_total <- results.df$Corg_fast + results.df$Corg_slow
 corgsubset <- results.df[which(results.df$Corg_total>100 & results.df$Corg_total<450),]
 finalsubset <- corgsubset[which(corgsubset$O2_bw>0.014 & corgsubset$O2_bw<0.28),]
