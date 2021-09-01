@@ -40,6 +40,8 @@ The following packages are required to run the OPD simiulation scripts:
 * marelac
 * writexl
 
+To use these simulations for your own use, you simply need to change the biodiffusion and bioirrigation variables under "Bioturbation Options" at the top of each script. 
+
 The following files were used to produce the data in Figure 2 and Figure 3. Each lists which figure it will produce the output for, and what the bioturbation parameters (biodiffusion(Db,0) and bioirrigation(a0) are:
 * Sim1_NoBioturbation.R - Produces output for Figure 2. No bioturbation; Db,0=0, a0=0
 * Sim2_WeakBiomixing.R - Produces output for Figure 3A. Weak biomixing; Db,0=1 cm2 yr-1, a0=0 yr-1
