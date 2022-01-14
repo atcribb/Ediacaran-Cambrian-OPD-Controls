@@ -46,7 +46,7 @@ The following packages are required to run the OPD simiulation scripts:
 To use these simulations for your own use, you simply need to change the biodiffusion and bioirrigation variables under "Bioturbation Options" at the top of each script. 
 
 This will produce the data in Figure 2 (biodiffusion sensitivity analysis) and Figure S1 (bioirrigation sensitivity analysis):
-* insert files here when uploaded
+* Sim_Dba0sensitivitytests.R - file ultimately will produce three .RData files, one for the biodiffusion sensitivity analysis, and two for the bioirrigation sensitivity analysis (one Ediacaran and one Terreneuvian)
 
 The following files were used to produce the data in Figures 3. Each simulation will produce an .RData output file that is used in the associated plotting output figure script. Each lists which figure it will produce the output for, and what the bioturbation parameters (biodiffusion(Db,0) and bioirrigation(a0) are:
 * Sim1_NoBioturbation - No bioturbation; Db,0=0, a0=0
