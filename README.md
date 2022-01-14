@@ -15,9 +15,11 @@ Alison T. Cribb(1*+), Sebastiaan J. van de Velde(2,3+), William M. Berelson(1), 
 Current release (initial submission):
 insert Zenodo doi here
 
-The purpose of this model is to simulate the oxygen penetration depth (OPD) given our paramaterized Ediacaran-Cambrian bioturbation values. This repository contains the biogeochemical reactive-tranpsort model, sensitivity experiment simulation scripts, figure plotting scripts, and output files needed to reproduce the results in "Ediacaran-Cambrian bioturbation did not oxygenate sediments in shallow marine ecosystems" by Cribb et al. The repository contains three directories: <b>1) Model</b> - the carbon, oxygen, nitrogen, and sulfur reactive-transport model; <b>2) Simulations</b> - the eight scripts used to produce Figures 2-4 and supplementary material 6; and <b>3) Figures</b> - the scripts used to create Figures 2, 3, 4, and 5, and supplementary material figures S1-3. Note that some figure editing was done in Illustrator after the figures were created in R, but you should be able to broadly reproduce all figures in the paper.
+The purpose of this model is to simulate the oxygen penetration depth (OPD) given our paramaterized Ediacaran-Cambrian bioturbation values. This repository contains the biogeochemical reactive-tranpsort model, sensitivity experiment simulation scripts, figure plotting scripts, and output files needed to reproduce the results in "Ediacaran-Cambrian bioturbation did not oxygenate sediments in shallow marine ecosystems" by Cribb et al. The repository contains three directories: <b>1) Datasets</b> - the ichnotaxa dataset with biomixing and bioirrigation assignments, reformatted from Buatois et al. (2020) Science Advances, and a small .csv file of ogranized biodiffusion coefficients from BI/ii and mixed layer depths (Table S1 in the paper); <b>2) Model</b> - the carbon, oxygen, nitrogen, and sulfur reactive-transport model; <b>3) Simulations</b> - the eight scripts used to produce Figures 2-4 and supplementary material 6; and <b>4) Figures</b> - the scripts used to create Figures 2, 3, 4, and 5, and supplementary material figures S1-3. Note that some figure editing was done in Illustrator after the figures were created in R, but you should be able to broadly reproduce all figures in the paper.
 
 No data input is needed, but details of how we paramaterized bioturbation in these models is explained in the manuscript text. Before running this model, set your working directory to a folder containing the model (Model_Function.R) and the simulation scripts. I recommend an empty folder for this, as each script will save an .RData output to the working directory.  You must run the Model_Function.R script to have to function in your environment in order for the simulations scripts to work. To recreate the figures, the output .RData files must be in the same working directory as the figure scripts. Each simulation script will also write the simulation output to an excel file. If you do not wish to save your results in an excel tfile, I recommend you comment out that line of code, which is at the end of each script.
+
+
 
 # Model
 The following package is required to run the model:
@@ -65,6 +67,9 @@ This will produce the data in Figure 4:
 
 This will produce the oxygen consumption profiles in Figure 5:
 * Sim_Figure5_O2ConsumptionProfiles.R - this script will produce all 10 .RData output files of oxygen consumption curves used to produce Figure 6. 
+
+If for any of these simulations you receive the error "Error in steady.1D(y = yini, func = model, parms = PL, nspec = PL$N.var,  : 
+  object 'model' not found", you need to load the model function from Model_Function.R into your environment.
 
 # Figures
 The following packages are required to recreate the figures in this paper:
