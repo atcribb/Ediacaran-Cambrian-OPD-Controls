@@ -89,5 +89,5 @@ This script will produce Figure 4:
 This will produce the oxygen consumption profiles in Figure 5 and Figure S3:
 * PlottingOutput_Figure5_FigureS3 - This script will reproduce the oxygen consumption profiles in the paper. It combines the consumption rates of all reoxidation reactions into a summated reoxidation rate, and plots consumption of oxygen via aerobic respiration and all reoxidation reactions. This script will use all ten .RData files produced from Sim_Figure5_O2ConsumptionProfiles.R and create ten different oxygen consumption profiles for the upper 1 cm of the sediment, which are all given in Figure S3.
 
-#Contact
+# Contact
 If you have any questions, please feel free to contact me at cribb@usc.edu
