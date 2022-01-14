@@ -1,0 +1,10 @@
+﻿Age,Source,ii_or_BI,MLD,Db_source1,Db_source2,k_source2,Db_final
+Nama,Mangano and Buatois (2014),0.1,0.165,0.02,0.01,5,0.01
+Fortunian,Mangano and Buatois (2014),0.5,0.825,0.23,0.19,5,0.21
+CambrianStage2,Mangano and Buatois (2014),2.3,3.795,1.40,4.00,5,2.70
+EarlyMiddleCambrian,Tarhan et al. (2015),NA,0.2,0.03,0.01,5,0.02
+Cambro_Ordovician,Tarhan et al. (2015),NA,1,0.29,0.28,5,0.28
+Ordovician_Silurian,Tarhan et al. (2015),NA,1.5,0.46,0.63,5,0.54
+Ediacaran_average,,,0.165,0.02,,,0.1
+Terreneuvian_average,,,1.61,0.50,,,0.98
+PostTerreneuvian_EarlyPaleo_Average,,,1.25,0.37,,,0.41
