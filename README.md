@@ -77,8 +77,8 @@ The following packages are required to recreate the figures in this paper:
 * tayloRswift
 
 This script will produce Figure 2 and Figure S1:
-* PlottingOutput_Figure1.R - 
-* PlottingOutput_FigureS2.R - 
+* PlottingOutput_Figure2.R - 
+* PlottingOutput_FigureS1.R - 
 
 This script will produce the figures in Figure 3 and Figure S2:
 * PlottingOutput_Figure3_FigureS2.R - This script will reproduce the fan diagrams/contour plots of Figure 3 and Figure S2. You will need to select which output file you would like to plot from the simulation files by commenting/un-commenting the dataset you want. For example, the default set here is to plot the no bioturbation output for Figure 2. Note that the simulation files produce OPD outputs for a larger range of organic matter flux and bottom-water oxygen concentrations, and these scripts will subset the data for the Corg=100-450 umol cm-2 yr-1 and O2=0.014-0.28 mM shown in the figures and discussed in the text of the paper. Lower bottom-water oxygen concentrations and organic matter fluxes are not applicable to the Ediacaran and early Cambrian.
