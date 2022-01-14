@@ -45,20 +45,26 @@ The following packages are required to run the OPD simiulation scripts:
 
 To use these simulations for your own use, you simply need to change the biodiffusion and bioirrigation variables under "Bioturbation Options" at the top of each script. 
 
-The following files were used to produce the data in Figure 2 and Figure 3. Each lists which figure it will produce the output for, and what the bioturbation parameters (biodiffusion(Db,0) and bioirrigation(a0) are:
-* Sim1_NoBioturbation.R - Produces output for Figure 2. No bioturbation; Db,0=0, a0=0
-* Sim2_WeakBiomixing.R - Produces output for Figure 3A. Weak biomixing; Db,0=1 cm2 yr-1, a0=0 yr-1
-* Sim3_WeakBioirrigation.R - Produces output for Figure 3B. Weak bioirrigation; Db,0=0 cm2 yr-1, a0=36.5 yr-1
-* Sim4_WeakBioturbation.R - Produces output for Figure 3C. Weak biomixing + bioirrigation; Db,0=1 cm2 yr-1, a0=36.5 yr-1
-* Sim5_StrongBiomixing.R - Produces output for Figure 3D. Strong biomixing; Db,0=10 cm2 yr-1, a0=0 yr-1
-* Sim6_StrongBioirrigation.R - Produces output for Figure 3E. Strong bioirrigation; Db,0=0 cm2 yr-1, a0=365 yr-1
-* Sim7_StrongBoioturbation.R - Produces output for Figure 3C. Strong biomixing + bioirrigation; Db,0=10 cm2 yr-1, a0=365 yr-1
+This will produce the data in Figure 2 (biodiffusion sensitivity analysis) and Figure S1 (bioirrigation sensitivity analysis):
+* insert files here when uploaded
+
+The following files were used to produce the data in Figures 3. Each simulation will produce an .RData output file that is used in the associated plotting output figure script. Each lists which figure it will produce the output for, and what the bioturbation parameters (biodiffusion(Db,0) and bioirrigation(a0) are:
+* Sim1_NoBioturbation - No bioturbation; Db,0=0, a0=0
+* Sim2_EdiacaranBiomixing.R - Ediacaran biomixing; Db,0=0.1 cm2 yr-1, a0=0 yr-1
+* Sim3_EdiacaranBioirrigation.R - Ediacaran bioirrigation; Db,0=0 cm2 yr-1, a0=3.65 yr-1
+* Sim4_EdiacaranBioturbation.R - Ediacaran biomixing + bioirrigation; Db,0=0.1 cm2 yr-1, a0=3.65 yr-1
+* Sim5_TerreneuvianBiomixing.R - Terreneuvian biomixing; Db,0=0.98 cm2 yr-1, a0=0 yr-1
+* Sim6_TerreneuvianBioirrigation.R - Terreneuvian bioirrigation; Db,0=0 cm2 yr-1, a0=35.77 yr-1
+* Sim7_TerreneuvianBioturbation.R - Terreneuvian biomixing + bioirrigation; Db,0=0.98 cm2 yr-1, a0=35.77 yr-1
+* Sim8_ModernBiomixing.R - Modern biomixing; Db,0=10 cm2 yr-1, a0=0 yr-1
+* Sim9_ModernBioirrigation.R - Modern bioirrigation; Db,0=0 cm2 yr-1, a0=365 yr-1
+* Sim10_ModernBioturbation.R - Modern biomixing + bioirrigation; Db,0=10 cm2 yr-1, a0=365 yr-1
 
 This will produce the data in Figure 4:
-* Figure4_simulations.R - this script will produce both the high bottom-water oxygen endmember and low bottom-water oxygen endmember results in Figure 4. This will produce two .RData output files that are used in the figure script.
+* Sim_Figure4_O2EndMembers.R - this script will produce both the high bottom-water oxygen endmember and low bottom-water oxygen endmember results in Figure 4. This will produce two .RData output files that are used in the plotting output figure script.
 
-This will produce the oxygen consumption profiles in Figure 6:
-* SM6_OxygenConsumption.R - this script will produce all 7 .RData output files of oxygen consumption curves used to produce Figure 6. 
+This will produce the oxygen consumption profiles in Figure 5:
+* Sim_Figure5_O2ConsumptionProfiles.R - this script will produce all 10 .RData output files of oxygen consumption curves used to produce Figure 6. 
 
 # Figures
 The following packages are required to recreate the figures in this paper:
@@ -68,12 +74,20 @@ The following packages are required to recreate the figures in this paper:
 * MASS
 * metR
 * egg
+* tayloRswift
 
-This script will produce the figures in Figures 2 and 3:
-* PlottingOutput_Figures23.R - This script will reproduce the fan diagrams/contour plots of Figure 2 and 3. You will need to select which output file you would like to plot from the simulation files by commenting/un-commenting the dataset you want. For example, the default set here is to plot the no bioturbation output for Figure 2. Note that the simulation files produce OPD outputs for a larger range of organic matter flux and bottom-water oxygen concentrations, and these scripts will subset the data for the Corg=100-450 umol cm-2 yr-1 and O2=0.014-0.28 mM shown in the figures and discussed in the text of the paper. Lower bottom-water oxygen concentrations and organic matter fluxes are not applicable to the Ediacaran and early Cambrian.
+This script will produce Figure 2 and Figure S1:
+* PlottingOutput_Figure1.R - 
+* PlottingOutput_FigureS2.R - 
+
+This script will produce the figures in Figure 3 and Figure S2:
+* PlottingOutput_Figure3_FigureS2.R - This script will reproduce the fan diagrams/contour plots of Figure 3 and Figure S2. You will need to select which output file you would like to plot from the simulation files by commenting/un-commenting the dataset you want. For example, the default set here is to plot the no bioturbation output for Figure 2. Note that the simulation files produce OPD outputs for a larger range of organic matter flux and bottom-water oxygen concentrations, and these scripts will subset the data for the Corg=100-450 umol cm-2 yr-1 and O2=0.014-0.28 mM shown in the figures and discussed in the text of the paper. Lower bottom-water oxygen concentrations and organic matter fluxes are not applicable to the Ediacaran and early Cambrian.
 
 This script will produce Figure 4:
-* PlottingOutput_Figure4.R - This script will reproduce Figure 4 and uses the two end member .RData files produced by Figure4_simulations.R
+* PlottingOutput_Figure4.R - This script will reproduce Figure 4 and uses the two end member .RData files produced by Sim_Figure4_O2EndMembers.R
 
-This will produce the oxygen consumption profiles in Supplementary Material 6:
-* PlottingOutput_SM6.R - This script will reproduce the oxygen consumption profiles in Supplementary Material 6. It combines the consumption rates of all reoxidation reactions into a summated reoxidation rate, and plots consumption of oxygen via aerobic respiration and all reoxidation reactions. This script will use all seven .RData files produced from SM6_OxygenConsumption.R and create seven different oxygen consumption profiles for the upper 1 cm of the sediment.
+This will produce the oxygen consumption profiles in Figure 5 and Figure S3:
+* PlottingOutput_Figure5_FigureS3 - This script will reproduce the oxygen consumption profiles in the paper. It combines the consumption rates of all reoxidation reactions into a summated reoxidation rate, and plots consumption of oxygen via aerobic respiration and all reoxidation reactions. This script will use all ten .RData files produced from Sim_Figure5_O2ConsumptionProfiles.R and create ten different oxygen consumption profiles for the upper 1 cm of the sediment, which are all given in Figure S3.
+
+#Contact
+If you have any questions, please feel free to contact me at cribb@usc.edu
