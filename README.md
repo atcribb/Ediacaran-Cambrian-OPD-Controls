@@ -13,7 +13,8 @@ Alison T. Cribb(1*+), Sebastiaan J. van de Velde(2,3+), William M. Berelson(1), 
 +The R scripts in this repository were created by A.T.C. and S.J.V.
 
 Current release (initial submission):
-insert Zenodo doi here
+<a href="https://doi.org/10.5281/zenodo.5851811"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5851811.svg" alt="DOI"></a>
+
 
 The purpose of this model is to simulate the oxygen penetration depth (OPD) given our paramaterized Ediacaran-Cambrian bioturbation values. This repository contains the biogeochemical reactive-tranpsort model, sensitivity experiment simulation scripts, figure plotting scripts, and output files needed to reproduce the results in "Ediacaran-Cambrian bioturbation did not oxygenate sediments in shallow marine ecosystems" by Cribb et al. The repository contains three directories: <b>1) Datasets</b> - the ichnotaxa dataset with biomixing and bioirrigation assignments, reformatted from Buatois et al. (2020) Science Advances, and a small .csv file of ogranized biodiffusion coefficients from BI/ii and mixed layer depths (Table S1 in the paper); <b>2) Model</b> - the carbon, oxygen, nitrogen, and sulfur reactive-transport model; <b>3) Simulations</b> - the eight scripts used to produce Figures 2-4 and supplementary material 6; and <b>4) Figures</b> - the scripts used to create Figures 2, 3, 4, and 5, and supplementary material figures S1-3. Note that some figure editing was done in Illustrator after the figures were created in R, but you should be able to broadly reproduce all figures in the paper.
 
