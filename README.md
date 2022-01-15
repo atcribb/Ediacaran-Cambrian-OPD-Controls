@@ -19,7 +19,10 @@ The purpose of this model is to simulate the oxygen penetration depth (OPD) give
 
 No data input is needed, but details of how we paramaterized bioturbation in these models is explained in the manuscript text. Before running this model, set your working directory to a folder containing the model (Model_Function.R) and the simulation scripts. I recommend an empty folder for this, as each script will save an .RData output to the working directory.  You must run the Model_Function.R script to have to function in your environment in order for the simulations scripts to work. To recreate the figures, the output .RData files must be in the same working directory as the figure scripts. Each simulation script will also write the simulation output to an excel file. If you do not wish to save your results in an excel tfile, I recommend you comment out that line of code, which is at the end of each script.
 
-
+# Datasets
+There are two .csv files in <b>Datasets</b>:
+* Biodiffusion_MixedLayerDepths.csv - the data displayed in Table S1 of the supplemental
+* Ichnotaxa_dataset.csv - the entire Ediacaran and Terreneuvian trace fossil dataset taken from Buatois et al. (2020) Sciences Advances, reformatted into a workable format for the code here.
 
 # Model
 The following package is required to run the model:
@@ -81,8 +84,10 @@ The following packages are required to recreate the figures in this paper:
 * egg
 * tayloRswift
 
-This script will produce the biomixing vs. bioirrigation analysis in Figure 1:
+Before running any of the scripts that reproduce the figures, download both of the files in <b>Datasets</b> and put them in your working directory. 
 
+This script will produce the biomixing vs. bioirrigation analysis in Figure 1:
+* Figure1_Biomixing_vs_Bioirrigation.R - This script contains the analysis and plotting output to recreate Figure 1.
 
 This script will produce Figure 2 and Figure S1:
 * PlottingOutput_Figure2.R - This script will reproduce the biodiffusion sensitivity analysis for different oxygen levels in Figure 2.
