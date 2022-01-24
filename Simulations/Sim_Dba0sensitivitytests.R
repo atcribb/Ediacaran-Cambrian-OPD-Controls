@@ -11,6 +11,24 @@ library(writexl)
 
 #==== SENSITIVITY ANALYSIS FOR BIODIFFUSION COEFFICIENTS =====#
 #Generate sensitivity analysis curve by increasing Db from 0 to 3
+
+#OM influx level (low    = 150 umol cm-2 yr-1 / 4.1 mmol m-2 d-1
+#                 medium = 400 umol cm-2 yr-1 / 10.9 mmol cm-2 d-1
+#                 high   = 600 umol cm-2 yr-1 / 19.2 mmol cm-2 d-1)
+
+CH2O.tot <- 150 #low
+#CH2O.tot <- 400 #medium
+#CH2O.tot <- 700 #high
+
+#====== FUNCTIONS ======#
+# function to calculate tortuiosity:
+f.tort <- function(por) 1-2*log(por)
+tort   <- function(D.grid, por.grid){
+  D.grid$mid <- D.grid$mid/f.tort(por.grid$mid)
+  D.grid$int <- D.grid$int/f.tort(por.grid$int)
+  return(D.grid)
+}
+
 #==== PARAMETER LIST  ====#
 PL <- list()
 
@@ -37,7 +55,7 @@ PL$Depth <- PL$grid$x.mid
 PL$S       <- 30    # salinity
 PL$TC      <- 25    # temperature [deg C]
 PL$P       <- 1.013 # pressure [bar]
-PL$pH <- 7.5
+PL$pH      <- 7.5
 
 #porosity profile:
 PL$por.0     <- 0.8     # porosity at the sediment-water interface
@@ -95,8 +113,7 @@ PL$CNratio <- 106.0/16.0 # C to N ratio organic matter
 PL$f.FeS   <- 0.1        # fraction of sulphide precipitating as FeS  
 
 #======= BOUNDARY CONDITION ========#
-#flux boundary conditions (these stay the same):
-CH2O.tot <- 100
+#flux boundary conditions
 frac.CH2O <- 0.5
 PL$F.CH2O.f <- CH2O.tot*frac.CH2O       # fast degrading organic matter depostion (umol cm-2 yr-1)
 PL$F.CH2O.s <- CH2O.tot*(1-frac.CH2O)   # slow degrading organic matter deposition (umol cm-2 yr-1)
@@ -204,7 +221,10 @@ for(j in 1:length(O2.ow.seq)){
   }
 }
 
-save(results_df, file='BiodiffusionSensitivityTestOutput.RData')
+#save as appropriate output file:
+save(results_df, file='BiodiffusionSensitivityTestOutput_low.RData')
+#save(results_df, file='BiodiffusionSensitivityTestOutput_med.RData')
+#save(results_df, file='BiodiffusionSensitivityTestOutput_high.RData')
 
 #==== SENSITIVITY ANALYSIS FOR BIOIRRIGATION COEFFICIENTS =====#
 #Generate sensitivity analysis curve by increasing irr.0 from 0 to 300
@@ -296,7 +316,10 @@ for(j in 1:length(O2.ow.seq)){
   }
 }
 
-save(Ediacaran_out, file='Ediacaran_BioirrigationSensitivityTest_Out.RData')
+#save as appropriate file
+save(Ediacaran_out, file='Ediacaran_BioirrigationSensitivityTest_low.RData')
+#save(Ediacaran_out, file='Ediacaran_BioirrigationSensitivityTest_med.RData')
+#save(Ediacaran_out, file='Ediacaran_BioirrigationSensitivityTest_high.RData')
 
 #==== SAME ANALYSIS - TERRENEUVIAN ====#
 #set up biodiffusion grid
@@ -366,4 +389,7 @@ for(j in 1:length(O2.ow.seq)){
   }
 }
 
-save(Terreneuvian_out, file='Terreneuvian_BioirrigationSensitivityTest_Out.RData')
+#save as appropriate output file
+save(Terreneuvian_out, file='Terreneuvian_BioirrigationSensitivityTest_low.RData')
+#save(Terreneuvian_out, file='Terreneuvian_BioirrigationSensitivityTest_med.RData')
+#save(Terreneuvian_out, file='Terreneuvian_BioirrigationSensitivityTest_high.RData')
