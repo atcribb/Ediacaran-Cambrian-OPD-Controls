@@ -12,12 +12,12 @@ library(writexl)
 #==== SENSITIVITY ANALYSIS FOR BIODIFFUSION COEFFICIENTS =====#
 #Generate sensitivity analysis curve by increasing Db from 0 to 3
 
-#OM influx level (low    = 150 umol cm-2 yr-1 / 4.1 mmol m-2 d-1
-#                 medium = 400 umol cm-2 yr-1 / 10.9 mmol cm-2 d-1
-#                 high   = 600 umol cm-2 yr-1 / 19.2 mmol cm-2 d-1)
+#OM influx level (low    = 150 umol cm-2 yr-1
+#                 medium = 300 umol cm-2 yr-1 
+#                 high   = 700 umol cm-2 yr-1 )
 
 CH2O.tot <- 150 #low
-#CH2O.tot <- 400 #medium
+#CH2O.tot <- 300 #medium
 #CH2O.tot <- 700 #high
 
 #====== FUNCTIONS ======#
