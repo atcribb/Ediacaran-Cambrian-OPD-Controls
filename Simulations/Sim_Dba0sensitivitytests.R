@@ -127,21 +127,17 @@ HCO3.ow.max <- 2.2   # HCO3 concentration bottom water [umol cm-3 or mM]
 NH4.ow.max  <- 0.0   # NH4 concentration bottom water [umol cm-3 or mM]
 HS.ow.max   <- 0.0   # HS concentration bottom water [umol cm-3 or mM]
 
-O2.ow.min   <- 0.014  #O2 concentration bottom water [umol cm-3 or mM]     (1% PAL)
-SO4.ow.min  <- 1      # SO4 concentration bottom water [umol cm-3 or mM]   (Canfield)
-NO3.ow.min  <- 0.012    # NO3 concentration bottom water [umol cm-3 or mM] (FOAM)
-HCO3.ow.min <- 2.2    # HCO3 concentration bottom water [umol cm-3 or mM]  (FOAM)
-NH4.ow.min  <- 0.0    # NH4 concentration bottom water [umol cm-3 or mM]   (FOAM)
-HS.ow.min   <- 0.0    # HS concentration bottom water [umol cm-3 or mM]    (FOAM)
+#sequence to scale boundary conditions - solutes scale linearly with PAL
+PALscaleseq <- c(0.05, 0.1, 0.25, 0.50, 0.70, 1) 
 
-iterations <- 4
 #solute boundary conditions
-O2.ow.seq    <- seq(from=O2.ow.min,    to=O2.ow.max,    length.out=iterations)
-SO4.ow.seq   <- seq(from=SO4.ow.min,   to=SO4.ow.max,   length.out=iterations)
-NO3.ow.seq   <- seq(from=NO3.ow.min,   to=NO3.ow.max,   length.out=iterations)
-HCO3.ow.seq  <- seq(from=HCO3.ow.min,  to=HCO3.ow.max,  length.out=iterations)
-NH4.ow.seq   <- seq(from=NH4.ow.min,   to=NH4.ow.max,   length.out=iterations)
-HS.ow.seq    <- seq(from=HS.ow.min,    to=HS.ow.max,    length.out=iterations)
+O2.ow.seq    <- O2.ow.max*PALscaleseq
+SO4.ow.seq   <- SO4.ow.max*PALscaleseq
+NO3.ow.seq   <- NO3.ow.max*PALscaleseq
+HCO3.ow.seq  <- rep(HCO3.ow.max, length(PALscaleseq)) #keep HCO3 the same
+NH4.ow.seq   <- NH4.ow.max*PALscaleseq
+HS.ow.seq    <- HS.ow.max*PALscaleseq
+
 
 #======= BIOTURBATION PARAMETERS =======# 
 #range Db from 0 to 3 cm2 yr-1
