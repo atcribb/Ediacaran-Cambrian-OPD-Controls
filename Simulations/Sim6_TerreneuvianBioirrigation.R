@@ -117,7 +117,7 @@ umolcmyr <- (365.25/10) #conver to umol cm-2 y-1
 
 #MAX BOUNDARY CONDITIONS (Modern)
 #flux boundary conditions
-F.CH2O.tot.max    <- 547.875                    #total organic matter deposition (umol cm-2 yr-1)
+F.CH2O.tot.max    <- 450                        #total organic matter deposition (umol cm-2 yr-1)
 f.CH2O.fast.max   <- 0.50                       #fraction of organic matter that is fast degrading
 F.CH2O.f.max   <- F.CH2O.tot.max*(f.CH2O.fast.max)   #fast-remineralizing organic matter deposition (umol cm-2 yr-1)
 F.CH2O.s.max   <- F.CH2O.tot.max*(1-f.CH2O.fast.max) #slow-remineralizing organic matter deposition (umol cm-2 yr-1)
@@ -133,14 +133,14 @@ HS.ow.max   <- 0.0   # HS concentration bottom water (umol cm-3 or mM)
 
 #MIN BOUNDARY CONDITIONS (Neoproterozoic)
 #flux boundary conditions
-F.CH2O.tot.min    <- 27.4                       #total organic matter deposition (umol cm-2 yr-1)
+F.CH2O.tot.min    <- 100                        #total organic matter deposition (umol cm-2 yr-1)
 f.CH2O.fast.min   <- 0.50                       #fraction of organic matter that is fast degrading 
 F.CH2O.f.min      <- F.CH2O.tot.min*(f.CH2O.fast.min)   #fast-remineralizing organic matter deposition (umol cm-2 yr-1)
 F.CH2O.s.min      <- F.CH2O.tot.min*(1-f.CH2O.fast.min) #slow-remineralizing organic matter deposition (umol cm-2 yr-1)
 F.FeS.min         <- 0.0                        # FeS deposition (umol cm-2 yr-1)
 
 #solute boundary conditions 
-O2.ow.min   <- 0.014  #O2 concentration bottom water (umol cm-3 or mM)     (1% PAL)
+O2.ow.min   <- 0.014  #O2 concentration bottom water (umol cm-3 or mM)     (5% PAL)
 SO4.ow.min  <- 1      # SO4 concentration bottom water (umol cm-3 or mM)   - Canfield and Farquhar (2009)
 NO3.ow.min  <- 0.012    # NO3 concentration bottom water (umol cm-3 or mM) - FOAM from Zhao et al. (2020)
 HCO3.ow.min <- 2.2    # HCO3 concentration bottom water (umol cm-3 or mM)  - FOAM from Zhao et al. (2020)
