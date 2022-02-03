@@ -121,19 +121,27 @@ PL$f.FeS   <- 0.1        # fraction of sulphide precipitating as FeS
 
 #======= BOUNDARY CONDITIONS ========#
 #flux boundary conditions:
-CH2O.tot     <- c(100, 250, 450)
+CH2O.tot     <- c(150, 300, 450)
 frac.CH2O    <- 0.5 #ratio of labile:refractory organic matter 
 F.CH2O.f.seq <- frac.CH2O*CH2O.tot        # organic matter deposition (umol cm-2 yr-1)
 F.CH2O.s.seq <- (1-frac.CH2O)*CH2O.tot    # organic matter deposition (umol cm-2 yr-1)
 PL$F.FeS     <- 0.0                       # FeS deposition (umol cm-2 yr-1)
 
-#upper boundary concentrations 
-PL$O2.ow   <- 0.014 # O2 concentration bottom water     (umol cm-3 or mM)
-PL$SO4.ow  <- 2.0     # SO4 concentration bottom water  (umol cm-3 or mM)
-PL$HCO3.ow <- 2.2     # HCO3 concentration bottom water (umol cm-3 or mM)
-PL$NH4.ow  <- 0.0     # NH4 concentration bottom water  (umol cm-3 or mM)
-PL$HS.ow   <- 0.0     # Fe concentration bottom water   (umol cm-3 or mM)
-PL$NO3.ow  <- 0.012   # NO3 concentration bottom water  (umol cm-3 or mM)
+#modern concentrations for normalization
+O2.ow.max   <- 0.28  #O2 concentration bottom water [umol cm-3 or mM]
+SO4.ow.max  <- 28.8  # SO4 concentration bottom water [umol cm-3 or mM]
+NO3.ow.max  <- 0.1 # NO3 concentration bottom water [umol cm-3 or mM]
+HCO3.ow.max <- 2.2   # HCO3 concentration bottom water [umol cm-3 or mM]
+NH4.ow.max  <- 0.0   # NH4 concentration bottom water [umol cm-3 or mM]
+HS.ow.max   <- 0.0   # HS concentration bottom water [umol cm-3 or mM]
+
+#upper boundary concentrations - 25% PAL atmO2
+PL$O2.ow   <- 0.25*O2.ow.max   # O2 concentration bottom water (25% PAL)     (umol cm-3 or mM)
+PL$SO4.ow  <- 0.25*SO4.ow.max  # SO4 concentration bottom water  (umol cm-3 or mM)
+PL$HCO3.ow <- 2.2              # HCO3 concentration bottom water (umol cm-3 or mM)
+PL$NH4.ow  <- 0.0              # NH4 concentration bottom water  (umol cm-3 or mM)
+PL$HS.ow   <- 0.0              # Fe concentration bottom water   (umol cm-3 or mM)
+PL$NO3.ow  <- 0.25*NO3.ow.max   # NO3 concentration bottom water  (umol cm-3 or mM)
 
 #==================================#
 #============MODEL RUN=============#
@@ -230,19 +238,19 @@ write_xlsx(results.low, 'Output_Figure4_lowend.xlsx')
 
 #======= BOUNDARY CONDITIONS ========#
 #flux boundary conditions (these change in loop code):
-CH2O.tot     <- c(100, 250, 450)
+CH2O.tot     <- c(150, 300, 450)
 frac.CH2O    <- 0.5 #ratio of labile:refractory organic matter 
 F.CH2O.f.seq <- frac.CH2O*CH2O.tot        # organic matter deposition (umol cm-2 yr-1)
 F.CH2O.s.seq <- (1-frac.CH2O)*CH2O.tot    # organic matter deposition (umol cm-2 yr-1)
 PL$F.FeS     <- 0.0                       # FeS deposition (umol cm-2 yr-1)
 
-#upper boundary concentrations (from Zhao et al. 2020, FOAM boundary conditions)
-PL$O2.ow   <- 0.15 # O2 concentration bottom water      (umol cm-3 or mM)
-PL$SO4.ow  <- 22     # SO4 concentration bottom water   (umol cm-3 or mM)
-PL$HCO3.ow <- 2.2     # HCO3 concentration bottom water (umol cm-3 or mM)
-PL$NH4.ow  <- 0.0     # NH4 concentration bottom water  (umol cm-3 or mM)
-PL$HS.ow   <- 0.0     # Fe concentration bottom water   (umol cm-3 or mM)
-PL$NO3.ow  <- 0.012   # NO3 concentration bottom water  (umol cm-3 or mM)
+#upper boundary concentrations - 50% PAL atmO2
+PL$O2.ow   <- 0.50*O2.ow.max   # O2 concentration bottom water (50% PAL)     (umol cm-3 or mM)
+PL$SO4.ow  <- 0.50*SO4.ow.max  # SO4 concentration bottom water  (umol cm-3 or mM)
+PL$HCO3.ow <- 2.2              # HCO3 concentration bottom water (umol cm-3 or mM)
+PL$NH4.ow  <- 0.0              # NH4 concentration bottom water  (umol cm-3 or mM)
+PL$HS.ow   <- 0.0              # Fe concentration bottom water   (umol cm-3 or mM)
+PL$NO3.ow  <- 0.50*NO3.ow.max   # NO3 concentration bottom water  (umol cm-3 or mM)
 
 #==================================#
 #============MODEL RUN=============#
