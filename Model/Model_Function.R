@@ -19,8 +19,7 @@ library(ReacTran)
 #====== NO DATA INPUT =======#
 
 #====== MODEL FUNCTION ======#
-model <- function (t,state,parameters,full.output=FALSE)
-{
+model <- function (t,state,parameters,full.output=FALSE){
   with(as.list(c(parameters)),{
     
     # Initialisation of state variables
@@ -116,7 +115,21 @@ model <- function (t,state,parameters,full.output=FALSE)
     dNO3  <- tran.NO3$dC  + reac.NO3  + irr.NO3
     dHS   <- tran.HS$dC   + reac.HS   + irr.HS
     
-    if (!full.output) return(list(c(dCH2O.f,dCH2O.s,dO2,dSO4,dFeS,dHCO3,dNH4,dNO3,dHS))) else
+    # Burial termsfor CH2O, FeS, and reduced terms
+    burial.CH2O.f <- tran.1D(C=CH2O.f,flux.up=F.CH2O.f,v=v.grid,D=Db.grid,VF=svf.grid,dx=grid)$flux.down
+    burial.CH2O.s <- tran.1D(C=CH2O.s,flux.up=F.CH2O.s,v=v.grid,D=Db.grid,VF=svf.grid,dx=grid)$flux.down
+    burial.FeS    <- tran.1D(C=FeS,flux.up=F.FeS,v=v.grid,D=Db.grid,VF=svf.grid,dx=grid)$flux.down
+    burial.NH4    <- tran.1D(C=NH4, C.up=NH4.ow, v=u.grid,D=D.NH4.grid, VF=por.grid,dx=grid)$flux.down
+    burial.HS     <- tran.1D(C=HS,  C.up=HS.ow,  v=u.grid,D=D.HS.grid,  VF=por.grid,dx=grid)$flux.down 
+    
+    # O2 irrigation flux
+    int.irr.O2 <- sum(irr.O2*grid$dx)
+    O2.diff.flux.up <- tran.1D(C=O2, C.up=O2.ow, v=u.grid, D=D.O2.grid, VF=por.grid, dx=grid)$flux.up
+    
+    if (!full.output) return(list(c(dCH2O.f,dCH2O.s,dO2,dSO4,dFeS,dHCO3,dNH4,dNO3,dHS),
+                                    'int.irr.O2'=int.irr.O2, 'O2.diff.flux.up'=O2.diff.flux.up, 
+                                    'CH2O.f.burial'=burial.CH2O.f, 'CH2O.s.burial'=burial.CH2O.s,
+                                    'FeS.burial'=burial.FeS, 'NH4.burial'=burial.NH4, 'HS.burial'=burial.HS)) else
     {
       rate.matrix <- matrix(nrow=N.var,ncol=N.rate)
       dimnames(rate.matrix) <- list(var.names,rate.names)
