@@ -1,4 +1,4 @@
-# Ediacaran-Cambrian bioturbation did not oxygenate sediments in shallow marine ecosystems
+# Ediacaran-Cambrian bioturbation did not extensively oxygenate sediments in shallow marine ecosystems
 
 Alison T. Cribb(1*+), Sebastiaan J. van de Velde(2,3+), William M. Berelson(1), David J. Bottjer(1), Frank A. Corsetti(1)
 
