@@ -70,6 +70,14 @@ This will produce the data in Figure 4:
 This will produce the oxygen consumption profiles in Figure 5:
 * Sim_Figure5_O2ConsumptionProfiles.R - this script will produce all 10 .RData output files of oxygen consumption curves used to produce Figure 6. 
 
+Thus will produce the oxygen flux data in Figure S4:
+* Sim_O2irrflux.R
+
+Theses will produce the burial rates in Figure S5:
+* Sim_BurialRates_nobioturbation.R
+* Sim_BurialRates_Ediacaran.R
+* Sim_BurialRates_Terreneuvian.R
+
 If for any of these simulations you receive the error "Error in steady.1D(y = yini, func = model, parms = PL, nspec = PL$N.var,  : 
   object 'model' not found", you need to load the model function from Model_Function.R into your environment.
 
@@ -88,11 +96,11 @@ Before running any of the scripts that reproduce the figures, download both of t
 This script will produce the biomixing vs. bioirrigation analysis in Figure 1:
 * Figure1_Biomixing_vs_Bioirrigation.R - This script contains the analysis and plotting output to recreate Figure 1.
 
-This script will produce Figure 2 and Figure S1:
+This script will produce Figure 2 and Figure S2:
 * PlottingOutput_Figure2.R - This script will reproduce the biodiffusion sensitivity analysis for different oxygen levels in Figure 2.
-* PlottingOutput_FigureS1.R - This script will reproduce the bioirrgation sensitivity analysis for different oxygen levels at Ediacaran and Terreneuvian biodiffusion coefficients for Figure S1.
+* PlottingOutput_FigureS2.R - This script will reproduce the bioirrgation sensitivity analysis for different oxygen levels at Ediacaran and Terreneuvian biodiffusion coefficients for Figure S1.
 
-This script will produce the figures in Figure 3 and Figure S2:
+This script will produce the figures in Figure 3 and Figure S3:
 * PlottingOutput_Figure3_FigureS2.R - This script will reproduce the fan diagrams/contour plots of Figure 3 and Figure S2. You will need to select which output file you would like to plot from the simulation files by commenting/un-commenting the dataset you want. For example, the default set here is to plot the no bioturbation output for Figure 2. Note that the simulation files produce OPD outputs for a larger range of organic matter flux and bottom-water oxygen concentrations, and these scripts will subset the data for the Corg=100-450 umol cm-2 yr-1 and O2=0.014-0.28 mM shown in the figures and discussed in the text of the paper. Lower bottom-water oxygen concentrations and organic matter fluxes are not applicable to the Ediacaran and early Cambrian.
 
 This script will produce Figure 4:
@@ -100,6 +108,12 @@ This script will produce Figure 4:
 
 This will produce the oxygen consumption profiles in Figure 5 and Figure S3:
 * PlottingOutput_Figure5_FigureS3 - This script will reproduce the oxygen consumption profiles in the paper. It combines the consumption rates of all reoxidation reactions into a summated reoxidation rate, and plots consumption of oxygen via aerobic respiration and all reoxidation reactions. This script will use all ten .RData files produced from Sim_Figure5_O2ConsumptionProfiles.R and create ten different oxygen consumption profiles for the upper 1 cm of the sediment, which are all given in Figure S3.
+
+This will produce the oxygen flux figure in Figure S4:
+* PlottingOUtput_FigureS4.R - This needs the .RData files from Sim_O2irrflux.R
+
+This will produce the burial rates profile in Figure S5:
+* PlottingOutput_FigureS5.R - This needs the .RData files from Sim_BurialRates_[nobioturbation/Ediacaran/Terreneuvian].R
 
 # Contact
 If you have any questions, please feel free to contact me at cribb@usc.edu
